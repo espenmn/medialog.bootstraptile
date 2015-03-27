@@ -23,8 +23,7 @@ class IBootstrapTile(IRichTextTile):
     text = RichText(title=u'Text')
     klasse = schema.TextLine(title=u'CSS Classes')
     style = schema.TextLine(title=u'Style')
-    datawowduration = schema.Int(title=u'data-wow-duration')
-    datawowdelay = schema.Int(title=u'data-wow-delay')
+
 
 class BootstrapTile(RichTextTile):
 
@@ -40,16 +39,7 @@ class BootstrapTile(RichTextTile):
         """
         return self.data['klasse']
 
-    def getDatawowdelay(self):
-        """ Return data wow delay info stored in the tile.
-        """
-        return str(self.data['datawowdelay']) + 'ms'
-        
-    def getDatawowduration(self):
-        """ Return data wow duration info stored in the tile.
-        """
-        return str(self.data['datawowduration']) + 'ms'
-        
+
     def getStyle(self):
         """ Return style, maybe we need to filter this (safe html).
         """
