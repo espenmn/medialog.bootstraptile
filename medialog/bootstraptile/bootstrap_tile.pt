@@ -10,13 +10,13 @@
             Please edit the tile to enter some text.
         </p>
         <div tal:define="klasse view/getKlasse;
-        				 data-wow-delay    view/getDatawowdelay;
-        				 data-wow-duration view/getDatawowduration;
+        				 datawowdelay    view/getDatawowdelay;
+        				 datawowduration view/getDatawowduration;
         				 style             view/getStyle" 
         	tal:attributes="class klasse; 
         					style style; 
-        					data-wow-duration data-wow-duration; 
-        					data-wow-delay data-wow-delay">
+        					data-wow-duration datawowduration;
+        					data-wow-delay datawowdelay">
         <tal:fields repeat="field view/get_configured_fields">
             <tal:text condition="python:field['id'] == 'text'">
                 <div tal:replace="structure python:field['content']">Rich Text</div>
