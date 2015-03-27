@@ -1,0 +1,40 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.cover">
+
+<include package="collective.cover" />
+    
+ <plone:tile
+      name="medialog.bootstraptile"
+      title="Bootstraptile"
+      icon="++resource++bootstraptile.png"
+      description="A richtext tile for use with bootstrap themes "
+      add_permission="cmf.ModifyPortalContent"
+      schema=".bootstrap_tile.IBootstrapTile"
+      class=".bootstrap_tile.BootstrapTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+  <!-- Register the installation GenericSetup extension profile -->
+  <genericsetup:registerProfile
+      name="default"
+      title="Bootstrap Richtext tile"
+      directory="profiles/default"
+      description="Adds a richtext tile with classes etc for bootstrap"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- Register the icons -->     
+  <browser:resource name="bootstrap_tile.png" file="files/bootstrap_tile.png" />
+  
+
+      
+</configure>
+
+
+ 
